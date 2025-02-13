@@ -4,13 +4,20 @@
     --dark-green:#1d600c;
     --padding-lg:0.5rem 1.5rem;
 }
-
+.breakline{
+    height:2px;
+    background-color: var(--light-green);
+}
 p,span,h1,h1,h3,h4,h5,h6{
     color:white;
     margin-bottom:0;
 }
 .small-text{font-size:16px;}
 footer .small-text{color:#31a116;}
+.copyright{
+    font-weight:bold;
+    color:var(--lighter-green);
+}
 ul{ list-style-type: none; }
 img{object-fit:cover;}
 
