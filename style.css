@@ -75,16 +75,21 @@ img{object-fit:cover;}
     min-width:300px;
 
 }
-.search input{ 
+.search input,.search input:focus{ 
     background-color:#1c5a0c;
     border-color:#212529;
 
 }
+.search input:focus{box-shadow:unset;}
+
 .search .icon{ 
     position:absolute;
     top:0.5rem;
     padding-left:0.5rem;
+    
 }
+
+.search input{ padding-left:2rem;}
 
 
 .gamelist-wrapper{
