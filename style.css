@@ -9,6 +9,8 @@ p,span,h1,h1,h3,h4,h5,h6{
     color:white;
     margin-bottom:0;
 }
+.small-text{font-size:16px;}
+footer .small-text{color:#31a116;}
 ul{ list-style-type: none; }
 img{object-fit:cover;}
 
@@ -62,7 +64,13 @@ img{object-fit:cover;}
         padding:var(--padding-lg);
     }
     .nav-header.desktop{ display:none; }
+    .cookies-policy{ width:75%;}
+    .cookies-policy p{
+        text-align:justify;
+        margin:auto;
+    }
 }
 @media screen and (max-width:500px){
     .nav-header .options p{font-size:0.75rem;}
+    .small-text{font-size:13px;}
 }
