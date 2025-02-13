@@ -68,7 +68,42 @@ img{object-fit:cover;}
 }
 .bar i{color:gray;}
 .profile .wrapper i{ font-size:1.5rem; }
+.providers, .provider{width:90%;}
+.providers{margin:auto;}
+.providers .splide__list{
+    align-items:center;
+}
+.provider{
+    
+    background-color:#0b3c25;
+    border-radius:5px;
 
+}
+.provider img{
+    display:block;
+    width:75%;
+}
+.provider,.provider img{margin:auto;}
+.provider-arrows{
+    position:absolute;
+    width:95%;
+    top: 50%;
+}
+.provider-arrow{
+    display:inline-block;
+    height:57px;
+    position:relative;
+    background-color:#27bb27;
+    border:2px solid black;
+    border-radius:6px;
+}
+.provider-prev{
+    left:-4%;
+}
+.provider-next{
+    left:100%;
+
+    }
 .search{ 
     width:90%;
     position:relative;
