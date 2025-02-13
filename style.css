@@ -1,6 +1,7 @@
 :root{
     --light-green:#1aaf33;
     --lighter-green:#1edc3e;
+    --low-dark-green:#1f6f0c;
     --dark-green:#1d600c;
     --padding-lg:0.5rem 1.5rem;
 }
@@ -29,6 +30,10 @@ img{object-fit:cover;}
 .dark-theme{
     background-color: var(--dark-green);
 }
+.mid-theme{
+    background-color: var(--low-dark-green);
+}
+
 
 .content{padding:var(--padding-lg);}
 
@@ -63,9 +68,28 @@ img{object-fit:cover;}
 }
 .bar i{color:gray;}
 .profile .wrapper i{ font-size:1.5rem; }
+
+.search{ 
+    width:90%;
+    position:relative;
+    min-width:300px;
+
+}
+.search input{ 
+    background-color:#1c5a0c;
+    border-color:#212529;
+
+}
+.search .icon{ 
+    position:absolute;
+    top:0.5rem;
+    padding-left:0.5rem;
+}
+
+
 .gamelist-wrapper{
     position:relative;
-    left:4%;
+    /*left:4%;*/
 }
 .game{
     overflow:hidden;
@@ -93,6 +117,9 @@ img{object-fit:cover;}
         text-align:justify;
         margin:auto;
     }
+}
+@media screen and (max-width:575px){
+    .gamelist-wrapper{left:6%;}
 }
 @media screen and (max-width:500px){
     .nav-header .options p{font-size:0.75rem;}
