@@ -97,7 +97,7 @@
                     </div>
                   </section>
 
-                <div class="search px-3 mx-auto d-flex flex-column">
+                <div class="search px-3 my-2 mx-auto d-flex flex-column">
                     <input type="text" class="form-control">
                     <div class="icon">
                         <i class="fa fa-search" aria-hidden="true"></i>
@@ -106,8 +106,10 @@
                 </div>
 
                 <div class="selection-list py-2">
-                    <ul>
+                    <ul class="w-75 mb-0 mt-3 ps-0 d-flex flex-wrap gap-2 align-items-center justify-content-around mx-auto">
                         <li class="category filter" data-selection="*"><h5>ALL GAMES</h5></li>
+                        <li class="category filter" data-selection="most-played"><h5>MOST PLAYED</h5></li>
+                        <li class="category filter" data-selection="new"><h5>NEW</h5></li>
                     </ul>
                 </div>
 
@@ -122,19 +124,19 @@
                     <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="bells on fire">
                         <img src="./img/Games/amatic/bellsonfire-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="double fruits">
+                    <div class="game amatic most-played col-5 col-sm-4 col-md-3"  data-title="double fruits">
                         <img src="./img/Games/amatic/doublefruits-slots-novibet-gr-370x180.webp" alt="">
                     </div>
                     <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="hot fruits">
                         <img src="./img/Games/amatic/hotfruits20-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="lucky joker">
+                    <div class="game amatic most-played new col-5 col-sm-4 col-md-3"  data-title="lucky joker">
                         <img src="./img/Games/amatic/luckyjoker5-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game netent col-5 col-sm-4 col-md-3"  data-title="jumanji">
+                    <div class="game netent most-played col-5 col-sm-4 col-md-3"  data-title="jumanji">
                         <img src="./img/Games/netent/jumanji-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game netent col-5 col-sm-4 col-md-3"  data-title="mineblown">
+                    <div class="game netent new col-5 col-sm-4 col-md-3"  data-title="mineblown">
                         <img src="./img/Games/netent/mineblown-slots-novibet-gr-370x180.jpg" alt="">
                     </div>
                     
@@ -145,7 +147,7 @@
         </div>
     </main>
     <footer class="dark-theme py-3">
-        <div class="section container-fluid">
+        <div class="section container-fluid my-5">
             <div class="content wrapper d-flex flex-column gap-2 align-items-center">
                 <img src="./img/logo.png" alt="" width="80" height="auto">
                 <ul class="d-flex flex-wrap gap-2 align-items-center justify-content-between ps-0">
@@ -243,6 +245,15 @@ var slider = new Splide( '.splide.providers', {
 		arrow : 'splide__arrow provider-arrow',
 		prev  : 'splide__arrow--prev provider-prev',
 		next  : 'splide__arrow--next provider-next',
+  },
+  breakpoints: {
+
+    830:{
+        perPage:3
+    },
+    520:{
+        perPage:2
+    }
   }
 } );
 
