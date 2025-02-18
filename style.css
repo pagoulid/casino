@@ -13,6 +13,7 @@ p,span,h1,h2,h3,h4,h5,h6{
     color:white;
     margin-bottom:0;
 }
+main{min-height:230px;}
 .small-text{font-size:16px;}
 footer .small-text{color:#31a116;}
 .copyright{
@@ -141,17 +142,43 @@ img{object-fit:cover;}
 }
 .game{
     overflow:hidden;
-    /*width:45%;*/
-    margin:0.5rem 0;
-    /*left:15px!important;*/
+    margin:0.5rem 0; 
 }
 
+.game .content-wrapper{
+    position: relative;
+    z-index:0;
+}
 
-.game img{
+.game .content-wrapper{
     width:90%;
-    display:block;
     margin:0 auto;
 }
+.game img, .hover-wrapper{
+    width:100%;
+}
+
+.hover-wrapper{
+    visibility:hidden;
+    display:flex;
+    justify-content:center;
+    position:absolute;
+    top:0;
+    height:100%;
+    z-index:1;
+    background-color:#212529a0;
+
+}
+.hover-wrapper i{
+    color:blue;
+    height:fit-content;
+    position:relative;
+    transform:translateY(-50%);
+    top:50%;
+
+
+}
+.game:hover .hover-wrapper{visibility:visible;}
 @media screen and (max-width:800px){
 
     .nav-header.mobile{
