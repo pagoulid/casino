@@ -72,25 +72,25 @@
                     <div class="splide__track">
                           <ul class="splide__list">
                               <li class="splide__slide">
-                                <div class="provider py-1 px-4" data-provider="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
+                                <div class="provider py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
                                 
                               </li>
                               <li class="splide__slide">
-                                <div class="provider py-1 px-4" data-provider="netent"><img src="./img/slider/netent.jpg" alt=""></div>
+                                <div class="provider filter py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
                               </li>
                               <li class="splide__slide">
-                                <div class="provider py-1 px-4" data-provider="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
+                                <div class="provider filter py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
                                 
                               </li>
                               <li class="splide__slide">
-                                <div class="provider py-1 px-4" data-provider="netent"><img src="./img/slider/netent.jpg" alt=""></div>
+                                <div class="provider filter py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
                               </li>
                               <li class="splide__slide">
-                                <div class="provider py-1 px-4" data-provider="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
+                                <div class="provider filter py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
                                 
                               </li>
                               <li class="splide__slide">
-                                <div class="provider py-1 px-4" data-provider="netent"><img src="./img/slider/netent.jpg" alt=""></div>
+                                <div class="provider filter py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
                               </li>
                              
                           </ul>
@@ -105,6 +105,12 @@
                     
                 </div>
 
+                <div class="selection-list py-2">
+                    <ul>
+                        <li class="category filter" data-selection="*"><h5>ALL GAMES</h5></li>
+                    </ul>
+                </div>
+
             </div>
 
         </div>
@@ -113,22 +119,22 @@
         <div class="section container-fluid">
             <div class="gamelist-wrapper">
                 <div class="gamelist w-75 mx-auto py-3">
-                    <div class="game col-5 col-sm-4 col-md-3" data-provider="amatic" data-title="bells on fire">
+                    <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="bells on fire">
                         <img src="./img/Games/amatic/bellsonfire-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game col-5 col-sm-4 col-md-3" data-provider="amatic" data-title="double fruits">
+                    <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="double fruits">
                         <img src="./img/Games/amatic/doublefruits-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game col-5 col-sm-4 col-md-3" data-provider="amatic" data-title="hot fruits">
+                    <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="hot fruits">
                         <img src="./img/Games/amatic/hotfruits20-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game col-5 col-sm-4 col-md-3" data-provider="amatic" data-title="lucky joker">
+                    <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="lucky joker">
                         <img src="./img/Games/amatic/luckyjoker5-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game col-5 col-sm-4 col-md-3" data-provider="netent" data-title="jumanji">
+                    <div class="game netent col-5 col-sm-4 col-md-3"  data-title="jumanji">
                         <img src="./img/Games/netent/jumanji-slots-novibet-gr-370x180.webp" alt="">
                     </div>
-                    <div class="game col-5 col-sm-4 col-md-3" data-provider="netent" data-title="mineblown">
+                    <div class="game netent col-5 col-sm-4 col-md-3"  data-title="mineblown">
                         <img src="./img/Games/netent/mineblown-slots-novibet-gr-370x180.jpg" alt="">
                     </div>
                     
@@ -186,6 +192,7 @@
    
    <script>
         var searchRegex;
+        var filterSelection;
         let grid =$('.gamelist');
         grid.isotope({
             itemSelector:'.game',
@@ -193,7 +200,8 @@
             filter:function(){
                 var game_title=$(this).attr('data-title')
                 var searchCase = (searchRegex)?game_title.match(searchRegex):true;
-                return searchCase
+                var filterCase = (filterSelection && filterSelection!='*' )?$(this).is('.'+filterSelection):true;
+                return searchCase && filterCase
             }
         })
 
@@ -202,6 +210,11 @@
             searchRegex = new RegExp($(this).val(),'gi')
             grid.isotope();
         }))
+
+        $('.filter').click(function(){
+            filterSelection = $(this).attr('data-selection')
+            grid.isotope();
+        })
 
         // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
