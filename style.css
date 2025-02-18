@@ -127,6 +127,13 @@ img{object-fit:cover;}
 .search input{ padding-left:2rem;}
 
 .filter{cursor:pointer;}
+.provider.selection.marked,.provider.selection:hover{border:2px solid blue;}
+.category.selection.marked,.category.selection:hover{
+    
+    background-color: #212529;
+    border-radius:7px;
+}
+.category.selection.marked h5,.category.selection:hover h5{color:var(--low-dark-green)!important;}
 
 .gamelist-wrapper{
     position:relative;

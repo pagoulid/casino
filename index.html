@@ -72,25 +72,25 @@
                     <div class="splide__track">
                           <ul class="splide__list">
                               <li class="splide__slide">
-                                <div class="provider py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
+                                <div class="provider selection py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
                                 
                               </li>
                               <li class="splide__slide">
-                                <div class="provider filter py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
+                                <div class="provider filter selection py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
                               </li>
                               <li class="splide__slide">
-                                <div class="provider filter py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
+                                <div class="provider filter selection py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
                                 
                               </li>
                               <li class="splide__slide">
-                                <div class="provider filter py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
+                                <div class="provider filter selection py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
                               </li>
                               <li class="splide__slide">
-                                <div class="provider filter py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
+                                <div class="provider filter selection py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
                                 
                               </li>
                               <li class="splide__slide">
-                                <div class="provider filter py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
+                                <div class="provider filter selection py-1 px-4" data-selection="netent"><img src="./img/slider/netent.jpg" alt=""></div>
                               </li>
                              
                           </ul>
@@ -107,9 +107,9 @@
 
                 <div class="selection-list py-2">
                     <ul class="w-75 mb-0 mt-3 ps-0 d-flex flex-wrap gap-2 align-items-center justify-content-around mx-auto">
-                        <li class="category filter" data-selection="*"><h5>ALL GAMES</h5></li>
-                        <li class="category filter" data-selection="most-played"><h5>MOST PLAYED</h5></li>
-                        <li class="category filter" data-selection="new"><h5>NEW</h5></li>
+                        <li class="category filter selection p-3" data-selection="*"><h5>ALL GAMES</h5></li>
+                        <li class="category filter selection p-3" data-selection="most-played"><h5>MOST PLAYED</h5></li>
+                        <li class="category filter selection p-3" data-selection="new"><h5>NEW</h5></li>
                     </ul>
                 </div>
 
@@ -216,6 +216,11 @@
         $('.filter').click(function(){
             filterSelection = $(this).attr('data-selection')
             grid.isotope();
+        })
+
+        $('.selection').click(function(){
+            $('.selection').removeClass('marked')
+            $(this).addClass('marked')   
         })
 
         // debounce so filtering doesn't happen every millisecond
