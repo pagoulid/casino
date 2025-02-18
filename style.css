@@ -152,8 +152,14 @@ img{object-fit:cover;}
 
 .game .content-wrapper{
     width:90%;
+    overflow:hidden;
     margin:0 auto;
 }
+.game .content-wrapper img{
+    transform: none;
+    transition: transform 0.4s;
+}
+.game:hover .content-wrapper img{transform: scale(1.2);}
 .game img, .hover-wrapper{
     width:100%;
 }
