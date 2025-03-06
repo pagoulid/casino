@@ -124,7 +124,7 @@
                     <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="bells on fire">
                         <div class="content-wrapper">
 
-                            <img src="./img/Games/amatic/bellsonfire-slots-novibet-gr-370x180.webp" alt="">
+                            <img class="lazy" data-src="./img/Games/amatic/bellsonfire-slots-novibet-gr-370x180.webp" alt="">
                             <div class="hover-wrapper">
                                 <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
@@ -134,7 +134,7 @@
                     </div>
                     <div class="game amatic most-played col-5 col-sm-4 col-md-3"  data-title="double fruits">
                         <div class="content-wrapper">
-                            <img src="./img/Games/amatic/doublefruits-slots-novibet-gr-370x180.webp" alt="">
+                            <img class="lazy" data-src="./img/Games/amatic/doublefruits-slots-novibet-gr-370x180.webp" alt="">
                             <div class="hover-wrapper">
                                 <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
@@ -144,7 +144,7 @@
                     </div>
                     <div class="game amatic col-5 col-sm-4 col-md-3"  data-title="hot fruits">
                         <div class="content-wrapper">
-                            <img src="./img/Games/amatic/hotfruits20-slots-novibet-gr-370x180.webp" alt="">
+                            <img class="lazy" data-src="./img/Games/amatic/hotfruits20-slots-novibet-gr-370x180.webp" alt="">
                             <div class="hover-wrapper">
                                 <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
@@ -154,7 +154,7 @@
                     <div class="game amatic most-played new col-5 col-sm-4 col-md-3"  data-title="lucky joker">
                        <div class="content-wrapper">
 
-                            <img src="./img/Games/amatic/luckyjoker5-slots-novibet-gr-370x180.webp" alt="">
+                            <img class="lazy" data-src="./img/Games/amatic/luckyjoker5-slots-novibet-gr-370x180.webp" alt="">
                             <div class="hover-wrapper">
                                 <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
@@ -163,7 +163,7 @@
                     </div>
                     <div class="game netent most-played col-5 col-sm-4 col-md-3"  data-title="jumanji">
                         <div class="content-wrapper">
-                            <img src="./img/Games/netent/jumanji-slots-novibet-gr-370x180.webp" alt="">
+                            <img class="lazy" data-src="./img/Games/netent/jumanji-slots-novibet-gr-370x180.webp" alt="">
                             <div class="hover-wrapper">
                                 <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
@@ -173,7 +173,7 @@
                     </div>
                     <div class="game netent new col-5 col-sm-4 col-md-3"  data-title="mineblown">
                         <div class="content-wrapper">
-                            <img src="./img/Games/netent/mineblown-slots-novibet-gr-370x180.jpg" alt="">
+                            <img class="lazy" data-src="./img/Games/netent/mineblown-slots-novibet-gr-370x180.jpg" alt="">
                             <div class="hover-wrapper">
                                 <i class="fa fa-play" aria-hidden="true"></i>
                             </div>
@@ -233,10 +233,26 @@
     <!--<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-   
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
    <script>
-        $(document).ready(function(){
 
+
+
+$('.lazy').Lazy({
+        // your configuration goes here
+        scrollDirection: 'vertical',
+        effect: 'fadeIn',
+        visibleOnly: true,
+        onError: function(element) {
+            console.log('error loading ' + element.data('src'));
+        },
+        onFinishedAll: function() {
+            isotopeHandler()// called once all elements was handled
+        }
+    });
+        //$(document).ready(function(){
+        function isotopeHandler(){
         var searchRegex;
         var filterSelection;
         let grid =$('.gamelist');
@@ -281,7 +297,7 @@ function debounce( fn, threshold ) {
     timeout = setTimeout( delayed, threshold );
   };
 }
-
+        }
 
 
 
@@ -310,7 +326,7 @@ slider.mount();
 
 
 
-})
+//})
 
 
     </script>
