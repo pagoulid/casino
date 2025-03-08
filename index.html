@@ -72,7 +72,7 @@
                     <div class="splide__track">
                           <ul class="splide__list">
                               <li class="splide__slide">
-                                <div class="provider selection py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
+                                <div class="provider filter selection py-1 px-4" data-selection="amatic"><img src="./img/slider/amatic.jpg" alt=""></div>
                                 
                               </li>
                               <li class="splide__slide">
@@ -280,6 +280,7 @@ $('.gimg').Lazy({
 
         $('.filter').click(function(){
             filterSelection = $(this).attr('data-selection')
+            //$('.filter').removeClass('marked')
             grid.isotope();
         })
 
@@ -287,6 +288,7 @@ $('.gimg').Lazy({
             $('.selection').removeClass('marked')
             $(this).addClass('marked')   
         })
+
 
         // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
@@ -309,7 +311,7 @@ function debounce( fn, threshold ) {
 
 var slider = new Splide( '.splide.providers', {
   perPage: 4,
-  rewind : true,
+  /*rewind : true,*/
   pagination:false,
   classes: {
 		arrows: 'splide__arrows provider-arrows',
